@@ -15,6 +15,10 @@ class Car {
   }
 
   update() {
+    this.#move();
+  }
+
+  #move() {
     // Forward Acceleration
     if (this.controls.forward) {
       this.speed += this.acceleration;
@@ -42,7 +46,7 @@ class Car {
       this.speed = 0;
     }
 
-    // left and right controls. Flip implemented for realistic reverse mechanics. 
+    // left and right controls. Flip implemented for realistic reverse mechanics.
     if (this.speed != 0) {
       const flip = this.speed > 0 ? 1 : -1;
       if (this.controls.left) {
